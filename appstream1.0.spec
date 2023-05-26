@@ -40,10 +40,10 @@ BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	pkgconfig(yaml-0.1)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
+BuildRequires:	gtk-doc
 %if %{with gcruft}
 BuildRequires:  pkgconfig(vapigen)
 BuildRequires:  vala-tools
-BuildRequires:	gtk-doc
 %endif
 BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:	libstemmer-devel
