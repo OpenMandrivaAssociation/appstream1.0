@@ -135,7 +135,9 @@ Vala files for %{name}.
 Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{EVRD}
+%if %{with gcruft}
 Requires:	%{girname} = %{EVRD}
+%endif
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devname}
@@ -151,8 +153,7 @@ Development files for %{name}.
 %package -n %{libnameqt}
 Summary:	Shared library for %{name}
 Group:		System/Libraries
-Requires:	%{name} = %{EVRD}
-Obsoletes:	%{mklibname appstreamqt 1} < 0.10.4
+Requires:	%{libname} = %{EVRD}
 
 %description -n %{libnameqt}
 Shared library for %{name}.
@@ -167,7 +168,7 @@ Shared library for %{name}.
 Summary:	Development files for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libnameqt} = %{EVRD}
-Provides:	%{name}-qt5-devel = %{EVRD}
+Provides:	appstream-qt6-devel = %{EVRD}
 Obsoletes:	%{mklibname appstreamqt -d} < 0.10.4
 
 %description -n %{devnameqt}
