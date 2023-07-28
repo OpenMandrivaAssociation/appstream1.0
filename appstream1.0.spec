@@ -1,4 +1,4 @@
-%define git 20230527
+%define git 20230728
 %define oname AppStream
 
 %bcond_with gcruft
