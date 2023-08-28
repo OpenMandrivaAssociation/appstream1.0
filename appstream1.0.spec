@@ -10,8 +10,9 @@
 %define devname %mklibname %{name} -d
 
 %define qt_major 3
-%define libnameqt %mklibname AppStreamQt %{qt_major}
-%define devnameqt %mklibname AppStreamQt -d
+# (tpg) temp rename as this carry only Qt6 lib
+%define libnameqt %mklibname AppStreamQt6 %{qt_major}
+%define devnameqt %mklibname AppStreamQt6 -d
 
 Summary:	Utilities to generate, maintain and access the AppStream Xapian database
 Name:		appstream1.0
@@ -31,7 +32,7 @@ BuildRequires:	gperf
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libxml-2.0)
-BuildRequires:  pkgconfig(xmlb) >= 0.3.6
+BuildRequires:	pkgconfig(xmlb) >= 0.3.6
 BuildRequires:	pkgconfig(packagekit-glib2)
 BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(Qt6Gui)
@@ -45,7 +46,7 @@ BuildRequires:	gtk-doc
 BuildRequires:  pkgconfig(vapigen)
 BuildRequires:  vala-tools
 %endif
-BuildRequires:  pkgconfig(libsystemd)
+BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	libstemmer-devel
 BuildRequires:	lmdb-devel
 Requires:	%{libname} = %{EVRD}
