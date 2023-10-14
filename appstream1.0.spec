@@ -42,6 +42,7 @@ BuildRequires:	pkgconfig(yaml-0.1)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	gtk-doc
+BuildRequires:	gi-docgen
 %if %{with gcruft}
 BuildRequires:  pkgconfig(vapigen)
 BuildRequires:  vala-tools
