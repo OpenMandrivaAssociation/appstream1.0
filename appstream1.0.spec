@@ -1,4 +1,4 @@
-%define git 20231103
+#define git 20231130
 %define oname AppStream
 
 %bcond_with gcruft
@@ -23,7 +23,11 @@ License:	GPLv2+ and LGPLv2.1+
 Group:		System/Configuration/Packaging
 Url:		http://www.freedesktop.org/wiki/Distributions/AppStream/Software
 #Source0:	http://www.freedesktop.org/software/appstream/releases/%{oname}-%{version}.tar.xz
+%if 0%{?git:1}
 Source0:	https://github.com/ximion/appstream/archive/refs/heads/main.tar.gz#/%{oname}-%{git}.tar.gz
+%else
+Source0:	https://github.com/ximion/appstream/archive/refs/tags/v%{version}.tar.gz
+%endif
 BuildRequires:	meson
 BuildRequires:	intltool
 BuildRequires:	itstool
@@ -184,8 +188,7 @@ Development files for %{name}.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -n appstream-main
-#%{version}
+%autosetup -n appstream-%{?git:main}%{!?git:%{version}}
 
 %build
 %meson \
