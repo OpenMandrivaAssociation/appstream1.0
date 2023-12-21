@@ -16,7 +16,7 @@
 
 Summary:	Utilities to generate, maintain and access the AppStream Xapian database
 Name:		appstream1.0
-Version:	1.0.0
+Version:	1.0.1
 Release:	%{?git:0.%{git}.}1
 # lib LGPLv2.1+, tools GPLv2+
 License:	GPLv2+ and LGPLv2.1+
